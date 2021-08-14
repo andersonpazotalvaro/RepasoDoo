@@ -43,7 +43,11 @@ public class Operaciones {
 			esNumeroPrimo();
 			break;
 		}
-		case 8: {
+			case 8: {
+				DividirEntero();
+				break;
+			}
+		case 9: {
 			salir();
 			break;
 		}
@@ -94,6 +98,23 @@ public class Operaciones {
 			} catch (CalculadoraExcepcion excepcion) {
 				imprimirSalidaError(excepcion.getMessage());
 			}
+		imprimirSalidaNormal("==========FIN OPERACI�N DIVIDIR=========");
+
+	}
+
+	private static void DividirEntero() {
+		imprimirSalidaNormal("==========INICIO OPERACI�N DIVIDIR=========");
+		imprimirSalidaNormal("Por favor ingrese el n�mero uno: ");
+		long numeroUno = leerNumeroEntero();
+
+		imprimirSalidaNormal("Por favor ingrese el n�mero dos: ");
+		long numeroDos = leerNumeroEntero();
+		try {
+			long resultado = (long) Calculadora.dividir(numeroUno, numeroDos);
+			imprimirSalidaNormal(numeroUno + "/" + numeroDos + "=" + resultado);
+		} catch (CalculadoraExcepcion excepcion) {
+			imprimirSalidaError(excepcion.getMessage());
+		}
 		imprimirSalidaNormal("==========FIN OPERACI�N DIVIDIR=========");
 
 	}

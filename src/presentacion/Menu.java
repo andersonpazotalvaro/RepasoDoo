@@ -16,7 +16,8 @@ public class Menu {
 		imprimirSalidaNormal("5-MaximoComunDivisor");
 		imprimirSalidaNormal("6-MinimoComunMultiplo");
 		imprimirSalidaNormal("7-Es Primo");
-		imprimirSalidaNormal("8-Salir");
+		imprimirSalidaNormal("8-DividirEntero");
+		imprimirSalidaNormal("9-Salir");
 	}
 
 }
