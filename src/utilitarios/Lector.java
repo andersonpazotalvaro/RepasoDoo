@@ -1,5 +1,7 @@
 package utilitarios;
 
+import excepcion.CalculadoraExcepcion;
+
 import java.util.Scanner;
 
 public class Lector {
@@ -24,7 +26,7 @@ public class Lector {
 				continuarLectura = false;
 			} catch (Exception excepcion) {
 				lectorTeclado.nextLine();
-				Impresor.imprimirSalidaError("Número entero no válido. Por favor ingrese un número entero válido...");
+				Impresor.imprimirSalidaError("Nï¿½mero entero no vï¿½lido. Por favor ingrese un nï¿½mero entero vï¿½lido...");
 			}
 		} while (continuarLectura);
 
@@ -42,10 +44,45 @@ public class Lector {
 				continuarLectura = false;
 			} catch (Exception excepcion) {
 				lectorTeclado.nextLine();
-				Impresor.imprimirSalidaError("Número decimal no válido. Por favor ingrese un número decimal válido...");
+				Impresor.imprimirSalidaError("Nï¿½mero decimal no vï¿½lido. Por favor ingrese un nï¿½mero decimal vï¿½lido...");
 			}
 		} while (continuarLectura);
 
 		return dato;
 	}
+
+	public static double leerNumerador() {
+
+		double numerador = 0;
+		boolean continuarLectura = true;
+
+		do {
+			try {
+				numerador = lectorTeclado.nextInt();
+				continuarLectura = false;
+			} catch (Exception excepcion) {
+				lectorTeclado.nextLine();
+				Impresor.imprimirSalidaError("Numerador no valido...");
+			}
+		} while (continuarLectura);
+
+		return numerador;
+	}
+	public static double leerDenominador() {
+
+		double denominador = 0;
+		boolean continuarLectura = true;
+		do {
+			try {
+				denominador = lectorTeclado.nextInt();
+				continuarLectura = false;
+			} catch (Exception excepcion) {
+				lectorTeclado.nextLine();
+				Impresor.imprimirSalidaError("Denominador no valido...");
+			}
+		} while (continuarLectura);
+
+		return denominador;
+	}
+
 }
